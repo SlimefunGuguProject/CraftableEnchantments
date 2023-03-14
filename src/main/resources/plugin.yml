@@ -1,0 +1,16 @@
+name: CraftableEnchantments
+
+author: SchnTgaiSpock
+
+description: A utility addon that adds a toggleable WAILA (What Am I Looking At) HUD for placed Slimefun items.
+
+main: io.github.schntgaispock.craftableenchantments.CraftableEnchantments
+
+website: https://github.com/SchnTgaiSpock/CraftableEnchantments
+
+version: ${project.version}
+
+api-version: 1.14
+
+depend:
+- Slimefun
