@@ -9,6 +9,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import net.md_5.bungee.api.ChatColor;
 
 public class ThemedItemStack extends SlimefunItemStack {
 
@@ -30,23 +31,26 @@ public class ThemedItemStack extends SlimefunItemStack {
 
     public @Nonnull String getDisplayName() {
         String name = getDisplayName();
-        return (name == null) ? "NO NAME GIVEN" : name;
+        return (name == null) ? "NO NAME" : name;
     }
 
     @ParametersAreNonnullByDefault
     public static ThemedItemStack of(ItemTheme theme, String id, Material material, String name, String... lore) {
         if (id == null || material == null) return null;
+
+        final String fName = theme.getColor() + ChatColor.translateAlternateColorCodes('&', name);
+
         if (lore.length > 0) {
-            String[] fLore = new String[lore.length + 1];
+            final String[] fLore = new String[lore.length + 1];
             fLore[0] = "";
 
             for (int i = 0; i < lore.length; i++) {
                 fLore[i + 1] = theme.getLoreColor() + lore[i];
             }
 
-            return new ThemedItemStack(id, material, theme.getColor() + name, fLore);
+            return new ThemedItemStack(id, material, fName, fLore);
         } else {
-            return new ThemedItemStack(id, material, theme.getColor() + name);
+            return new ThemedItemStack(id, material, fName);
         }
     }
 
