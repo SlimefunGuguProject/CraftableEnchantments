@@ -1,3 +1,2 @@
-# CraftableEnchantments
-
-An addon for Slimefun4 that adds Ancient Altar recipes for enchanted books. Recipes can be disabled individually by disabling their respective items in `plugins/Slimefun/items.yml`.
+# 附魔工艺
+为各种附魔书添加了粘液科技的配方，使用远古祭坛合成。 可以通过禁用`plugins/Slimefun/items.yml`中相应附魔书的ID，来实现禁用某个附魔书的合成配方
